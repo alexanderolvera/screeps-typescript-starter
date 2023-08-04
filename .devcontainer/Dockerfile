@@ -1,4 +1,6 @@
-FROM node:12-alpine
+FROM node:12.22-bullseye
 
-RUN apk add --update --no-cache git ca-certificates openssl openssh
+RUN apt update
+RUN apt install git ca-certificates openssl openssh build-essential
+
 RUN npm install -g rollup
